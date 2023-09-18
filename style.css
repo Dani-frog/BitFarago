@@ -1,0 +1,16 @@
+#Bemutatkozas{
+    display: flex;
+
+}
+.Onkep{
+    width: 100%;
+    height: 100%;
+    margin: 1vw;
+
+}
+
+#Kep1,#Kep2,#Kep3{
+    margin: 1vw;
+    align-self: center;
+}
+
