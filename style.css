@@ -1,5 +1,14 @@
+#Time{
+    display: table-caption;
+    margin: 1em;
+
+}
 #Bemutatkozas{
-    display: flex;
+    width: 300px;
+    border: 6px solid black;
+    box-shadow: blueviolet 2px 2px 2px 1px;
+    padding: 50px;
+    margin: 20px;
 
 }
 .Onkep{
@@ -12,5 +21,6 @@
 #Kep1,#Kep2,#Kep3{
     margin: 1vw;
     align-self: center;
+    display: none;
 }
 
