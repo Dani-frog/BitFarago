@@ -6,12 +6,21 @@ body{
     background-size: cover;
     position: relative;
 }
+
+
 #cim h1{
+    background-color: rgba(128, 128, 128, 0.432);
+    padding: .8%;
+    box-shadow: 0 0 10px 0 #969892 inset, 0 0 10px 4px #969892;
     text-align: center;
     color: black;
-    
-    font-size: 10rem;
 }
+@media screen and (min-width: 601px) {
+    #cim h1{
+      font-size: 80px;
+    }
+}
+
 #szelektor{
     
     margin: 1rem;
@@ -20,12 +29,20 @@ body{
 }
 #rolunk, #filmes{
     display: inline-block;
-    border: 4px solid black;
+    border: 5px solid black;
     border-radius: 10%;
-    padding: 10%;
+    padding: 20rem;
     margin: 2.5%;
     vertical-align: middle;
 }
+#rolunk:hover,#filmes:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 10px 4px rgb(255, 255, 255);
+    background-color: rgba(27, 26, 26, 0.438);
+    border: solid white 5px;
+    
+}
+
 #rolunk h2, #filmes h2{
     color: black;
     font-size: xx-large;
