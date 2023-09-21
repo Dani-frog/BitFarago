@@ -8,12 +8,15 @@ body{
 }
 
 #Leiras{
-    width: 100%;
-    height: 100%;
+    width:75vw;
+    height:10vw;
     display: flex;
     border-radius: 4%;
     border: black solid 15px;
     background-color: rgb(209, 199, 199);
+    overflow: auto;
+    font-style: italic;
+    font-weight: bold;
 }
 
 #Time{
@@ -39,6 +42,17 @@ body{
     margin: auto;
 }
 
+#Tanarok{
+    position: absolute;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+}
+
+#Elsosor{
+    display: flex;
+}
+
 #Kep4{
     float: left;
     align-self: center;
@@ -52,6 +66,7 @@ body{
 #Kep1,#Kep2,#Kep3,#Kep4,#Kep5{
     margin: 1vw;
     padding: 1vw;
+    clear: both;
 }
 
 #Bszoveg{
