@@ -10,6 +10,7 @@ function IdoKiiratas(){
 }
 
 var i = 0;
+
 function Kepmutat()
 {
     let t = ["Kep1","Kep2","Kep3"];
