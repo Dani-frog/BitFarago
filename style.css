@@ -1,26 +1,44 @@
 #Time{
     display: table-caption;
+    color: black;
+    text-align: left;
+    font-weight: bold;
+    
     margin: 1em;
 
 }
 #Bemutatkozas{
-    width: 300px;
+    width: 25%;
     border: 6px solid black;
     box-shadow: blueviolet 2px 2px 2px 1px;
-    padding: 50px;
-    margin: 20px;
+    padding: 5%;
+    margin: 1%;
 
 }
 .Onkep{
     width: 100%;
     height: 100%;
     margin: 1vw;
+    
 
 }
 
 #Kep1,#Kep2,#Kep3{
     margin: 1vw;
     align-self: center;
-    display: none;
+    
+}
+#Slideshow{
+    width: 300px;
+    border: 6px solid black;
+    box-shadow: blueviolet 2px 2px 2px 1px;
+    padding: 50px;
+    margin: 20px;
 }
 
+.SlideShow{
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    margin: 1vw;
+}

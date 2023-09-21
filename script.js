@@ -10,13 +10,10 @@ function IdoKiiratas(){
 }
 
 var i = 0;
-function Kepmutat()
+function KoviKep()
 {
-    let t = ["Kep1","Kep2","Kep3"];
-    
-    document.getElementById(t[i++]).style.display="block";
-    if (i==t.length) {
-        
-    }
-   
+    let t = ["Kepek/Dani.png","Kepek/Boti.png","Kepek/Alex.png"];
+    document.getElementById("Slideshow").innerHTML = "<img src="+t[i++]+" class="+"SlideShow"+"></img>"
+    if (i==t.length)
+        i = 0;
 }
