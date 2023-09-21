@@ -6,14 +6,21 @@ body{
     background-size: cover;
     position: relative;
 }
+
+
 #cim h1{
     background-color: rgba(128, 128, 128, 0.432);
     padding: .8%;
     box-shadow: 0 0 10px 0 #969892 inset, 0 0 10px 4px #969892;
     text-align: center;
     color: black;
-    font-size:6vw;
 }
+@media screen and (min-width: 601px) {
+    #cim h1{
+      font-size: 80px;
+    }
+}
+
 #szelektor{
     
     margin: 1rem;
@@ -24,7 +31,7 @@ body{
     display: inline-block;
     border: 5px solid black;
     border-radius: 10%;
-    padding: 10%;
+    padding: 20rem;
     margin: 2.5%;
     vertical-align: middle;
 }
