@@ -19,6 +19,30 @@ body{
     font-weight: bold;
 }
 
+#gomb1,#gomb2,#gomb3,#gomb4,#gomb5
+{
+
+top: 10vw;
+
+}
+
+#gombok
+{
+    align-content: stretch;
+    justify-content: space-evenly;
+    display:flex;
+    margin-bottom: 1vw;
+}
+
+#gombok2
+{
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    display:flex;
+    margin-top: 1vw;
+}
+
 #Time{
     display: table-caption;
     margin: 1em;
@@ -27,6 +51,7 @@ body{
 
 }
 #Bemutatkozas{
+    text-align: center;
     width:70%;
     padding: 5vw;
     margin: 5vw;
@@ -43,14 +68,20 @@ body{
 }
 
 #Tanarok{
+    flex-wrap: wrap;
+    text-align: center;
     position: absolute;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 25%;
+    margin-right: 25%;
     display: flex;
 }
 
 #Elsosor{
     display: flex;
+}
+
+.kozepre{
+    text-align: center;
 }
 
 #Kep4{
@@ -63,10 +94,13 @@ body{
     align-self: center;
 }
 
+
 #Kep1,#Kep2,#Kep3,#Kep4,#Kep5{
     margin: 1vw;
     padding: 1vw;
     clear: both;
+    align-content: stretch;
+    justify-content: space-around;
 }
 
 #Bszoveg{
