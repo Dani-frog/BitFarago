@@ -1,6 +1,12 @@
 body{
-    background-color: grey;
+    /* #151515 #FFD700 #F2F4CD*/
+    background: radial-gradient(ellipse at top,  #969892, transparent),
+                radial-gradient(ellipse at bottom, rgb(78, 78, 78), transparent);
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
 }
+
 #Time{
     display: table-caption;
     margin: 1em;
@@ -9,24 +15,39 @@ body{
 
 }
 #Bemutatkozas{
-    width: 20%;
-    border: 6px solid black;
-    box-shadow: blueviolet 2px 2px 2px 1px;
-    padding: 50px;
-    margin: 20px;
+    width:70%;
+    padding: 5vw;
+    margin: 5vw;
+    display: inline-block;
 
+    height: 100%;
+    position: absolute;
 }
 .Onkep{
-    width: 75%;
-    height: 75%;
+    width: 10vw;
     border: 25px solid transparent;
     border-image: url("Kepek/frame.png") 100 stretch ;
-
+    margin: auto;
 }
 
-#Kep1,#Kep2,#Kep3{
-    margin: 1vw;
+#Kep4{
+    float: left;
     align-self: center;
+}
+
+#Kep5{
+    float: right;
+    align-self: center;
+}
+
+#Kep1,#Kep2,#Kep3,#Kep4,#Kep5{
+    margin: 1vw;
+    padding: 1vw;
+}
+
+#Bszoveg{
+    position: fixed;
+    float: right;
 }
 
 .BKep
