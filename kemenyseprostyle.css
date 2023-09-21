@@ -7,31 +7,53 @@ body{
     position: relative;
 }
 
-#Leiras{
-    width:75vw;
-    height:10vw;
-    display: flex;
-    border-radius: 4%;
-    border: black solid 15px;
-    background-color: rgb(209, 199, 199);
-    overflow: auto;
-    font-style: italic;
+#cim{
+    text-align: center;
+    margin-right: 3%;
     font-weight: bold;
 }
 
-#gomb1,#gomb2,#gomb3,#gomb4,#gomb5
-{
-
-top: 10vw;
-
+.cimSor{
+    display: flex;
 }
+.cimOszlop1{
+    flex: 3%;
+    padding: .2rem;
+    margin: .5rem;
+}
+.cimOszlop2{
+    flex: 97%;
+    padding: .2rem;
+    margin: .5rem;
+}
+
+#oldal{
+    height: 200vh;
+    display: list-item;
+    
+}
+
+#Leiras{
+    width: 98%;
+    height: 15vh;
+    display: flex;
+    border-radius: 1%;
+    border: white solid 2px;
+    background-color: rgba(114, 112, 112, 0.63);
+    box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 10px 4px rgb(255, 255, 255);
+    overflow: auto;
+    font-style: italic;
+    font-weight: bold;
+    padding: 1%;
+}
+
 
 #gombok
 {
     align-content: stretch;
     justify-content: space-evenly;
     display:flex;
-    margin-bottom: 1vw;
+    margin-bottom: 1vh;
 }
 
 #gombok2
@@ -40,7 +62,7 @@ top: 10vw;
     align-content: stretch;
     justify-content: space-evenly;
     display:flex;
-    margin-top: 1vw;
+    margin-top: 1vh;
 }
 
 #Time{
@@ -52,64 +74,73 @@ top: 10vw;
 }
 #Bemutatkozas{
     text-align: center;
-    width:70%;
-    padding: 5vw;
-    margin: 5vw;
-    display: inline-block;
-    top: 20vw;
-    height: 100%;
-    position: absolute;
+    width: 96%;
+    height: 100vh;
+    margin: 2%;
+  
 }
 .Onkep{
     width: 10vw;
-    border: 25px solid transparent;
+    border: 1rem solid transparent;
     border-image: url("Kepek/frame.png") 100 stretch ;
-    margin: auto;
+    margin: .5rem;
 }
 
-#Tanarok{
-    flex-wrap: wrap;
-    text-align: center;
-    position: absolute;
-    margin-left: 25%;
-    margin-right: 25%;
+
+.csapattagokSor{
     display: flex;
 }
 
-#Elsosor{
+.csapattagokOszlop{
+    flex: 33.3%;
+    padding: .1rem ;
+}
+
+.csapattagokOszlopGomb{
+    flex: 33.3%;
+}
+
+.tanarokSor{
     display: flex;
 }
 
-.kozepre{
+.tanarokOszlop{
+    flex: 50%;
+    padding: .1rem;
+    
+}
+
+.tanarokOszlopGomb{
+    flex: 50%;
+    
+}
+.tanarokOszlopGomb,.csapattagokOszlopGomb{
+    box-shadow:  goldenrod 1px 1px 10px;
+    padding: .5rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 2%;
+    background-color: rgba(255, 255, 255, 0.534);
+    font-weight: bold;
+
+}
+
+.csapattagokOszlopGomb:hover, .tanarokOszlopGomb:hover{
+    box-shadow: 0 0 10px 0 goldenrod inset, 0 0 10px 5px goldenrod;
+    border: none;
+    border-radius: 5%;
+    background-color: #969892;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: black 3px 3px 1px;
+    cursor: pointer;
+}
+
+#SlideshowDiv{
     text-align: center;
+    width: 90%;
+    height: 50vh;
+    padding: 3%;
+    margin: 2%;
+    margin-top: 20vh;
 }
-
-#Kep4{
-    float: left;
-    align-self: center;
-}
-
-#Kep5{
-    float: right;
-    align-self: center;
-}
-
-
-#Kep1,#Kep2,#Kep3,#Kep4,#Kep5{
-    margin: 1vw;
-    padding: 1vw;
-    clear: both;
-    align-content: stretch;
-    justify-content: space-around;
-}
-
-#Bszoveg{
-
-    float: right;
-}
-
-.BKep
-{
-    display: inline-block;
-}
-
