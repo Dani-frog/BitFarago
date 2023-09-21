@@ -7,6 +7,15 @@ body{
     position: relative;
 }
 
+#Leiras{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-radius: 4%;
+    border: black solid 15px;
+    background-color: rgb(209, 199, 199);
+}
+
 #Time{
     display: table-caption;
     margin: 1em;
@@ -19,7 +28,7 @@ body{
     padding: 5vw;
     margin: 5vw;
     display: inline-block;
-
+    top: 20vw;
     height: 100%;
     position: absolute;
 }
