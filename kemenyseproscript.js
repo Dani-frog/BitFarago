@@ -23,7 +23,7 @@ function Leiras(x)
         megnyitva=false;
         document.getElementById("Leiras").innerHTML="";
     }
- 
+
 }
 
 var i = 0;
