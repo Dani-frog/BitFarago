@@ -48,6 +48,7 @@ body{
 }
 
 
+
 #gombok
 {
     align-content: stretch;
@@ -98,6 +99,27 @@ body{
 
 .csapattagokOszlopGomb{
     flex: 33.3%;
+    box-shadow:  goldenrod 1px 1px 10px;
+    transition: all .5s ease-in-out;
+    padding: .5rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 2%;
+    background-color: rgba(255, 255, 255, 0.534);
+    font-weight: bold;
+}
+
+.csapattagokOszlopGombInaktiv{
+    flex: 33.3%;
+    transition: all .5s ease-in-out;
+    box-shadow: 0 0 5px 0  black, 0 0 5px 2px black;
+    padding: .5rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 2%;
+    background-color: rgba(255, 255, 255, 0.534);
+    font-weight: bold;
+    color: rgba(177, 17, 17, 0.781);
 }
 
 .tanarokSor{
@@ -112,17 +134,27 @@ body{
 
 .tanarokOszlopGomb{
     flex: 50%;
-    
-}
-.tanarokOszlopGomb,.csapattagokOszlopGomb{
     box-shadow:  goldenrod 1px 1px 10px;
+    transition: all .5s ease-in-out;
     padding: .5rem;
     margin: 1rem;
     border: none;
     border-radius: 2%;
     background-color: rgba(255, 255, 255, 0.534);
     font-weight: bold;
+}
 
+.tanarokOszlopGombInaktiv{
+    flex: 50%;
+    transition: all .5s ease-in-out;
+    box-shadow: 0 0 5px 0  black, 0 0 5px 2px black;
+    padding: .5rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 2%;
+    background-color: rgba(255, 255, 255, 0.534);
+    font-weight: bold;
+    color: rgba(177, 17, 17, 0.781);
 }
 
 .csapattagokOszlopGomb:hover, .tanarokOszlopGomb:hover{
@@ -134,6 +166,7 @@ body{
     font-weight: bold;
     text-shadow: black 3px 3px 1px;
     cursor: pointer;
+    transition: all .4s ease-in-out;
 }
 
 #SlideshowDiv{

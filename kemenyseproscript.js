@@ -18,12 +18,47 @@ function Leiras(x)
     if (!megnyitva) {
         megnyitva = true;
         document.getElementById("Leiras").innerHTML=leirasok[x-1];
+        GombokInaktiv(x);
     }
     else{
         megnyitva=false;
         document.getElementById("Leiras").innerHTML="";
+        GombokAktiv(x);
     }
 
+}
+
+function GombokAktiv(x){
+    for(let i = 1;i<6;i++){
+        if(i!=x){
+            if(i<4){
+                document.getElementById("gomb"+i+"").classList = "csapattagokOszlopGomb";
+                document.getElementById("gomb"+i+"").setAttribute("onclick","Leiras("+i+")");
+                
+            }
+            else{
+                document.getElementById("gomb"+i+"").classList = "tanarokOszlopGomb";
+                document.getElementById("gomb"+i+"").setAttribute("onclick","Leiras("+i+")");
+            }
+            
+        }
+    }
+}
+
+function GombokInaktiv(x){
+    for(let i = 1;i<6;i++){
+        if(i!=x){
+            if(i<4){
+                document.getElementById("gomb"+i+"").classList = "csapattagokOszlopGombInaktiv";
+                document.getElementById("gomb"+i+"").removeAttribute("onclick");
+            }
+            else{
+                document.getElementById("gomb"+i+"").classList = "tanarokOszlopGombInaktiv";
+                document.getElementById("gomb"+i+"").removeAttribute("onclick");
+            }
+            
+        }
+    }
 }
 
 var i = 0;
