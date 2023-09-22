@@ -41,10 +41,13 @@ body{
     border: white solid 2px;
     background-color: rgba(114, 112, 112, 0.63);
     box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 10px 4px rgb(255, 255, 255);
-    overflow: auto;
+    /*overflow: auto;*/
     font-style: italic;
     font-weight: bold;
     padding: 1%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 
@@ -171,9 +174,47 @@ body{
 
 #SlideshowDiv{
     text-align: center;
-    width: 90%;
-    height: 50vh;
-    padding: 3%;
-    margin: 2%;
-    margin-top: 20vh;
+    /*width: 90%;*/
+    height: 10vh;
+    margin-top: 30vh;
 }
+
+#SlideshowDiv img{
+    max-width: 90%;
+    height: auto;
+}
+
+#Slideshow-button{
+    margin-bottom: 2vw;
+    border-radius: 4px;
+    width: 10%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.534);
+    transition: all .5s ease-in-out;
+}
+
+#Slideshow-button:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: black 3px 3px 1px;
+    cursor: pointer;
+    background-color: #282926;
+    transition: all .4s ease-in-out;
+}
+
+.SlideShowalap{
+    max-width: fit-content;
+    height: auto;
+    border: 1rem solid transparent;
+    border-image: url("Kepek/goth-frame.png") 210 stretch ;
+}
+
+.SlideShowalap {
+    animation: fadeIn ease 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
