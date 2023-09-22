@@ -1,0 +1,146 @@
+body{
+    /* #151515 #FFD700 #F2F4CD*/
+    background: radial-gradient(ellipse at top,  #969892, transparent),
+                radial-gradient(ellipse at bottom, rgb(78, 78, 78), transparent);
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+#cim{
+    text-align: center;
+    margin-right: 3%;
+    font-weight: bold;
+}
+
+.cimSor{
+    display: flex;
+}
+.cimOszlop1{
+    flex: 3%;
+    padding: .2rem;
+    margin: .5rem;
+}
+.cimOszlop2{
+    flex: 97%;
+    padding: .2rem;
+    margin: .5rem;
+}
+
+#oldal{
+    height: 200vh;
+    display: list-item;
+    
+}
+
+#Leiras{
+    width: 98%;
+    height: 15vh;
+    display: flex;
+    border-radius: 1%;
+    border: white solid 2px;
+    background-color: rgba(114, 112, 112, 0.63);
+    box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 10px 4px rgb(255, 255, 255);
+    overflow: auto;
+    font-style: italic;
+    font-weight: bold;
+    padding: 1%;
+}
+
+
+#gombok
+{
+    align-content: stretch;
+    justify-content: space-evenly;
+    display:flex;
+    margin-bottom: 1vh;
+}
+
+#gombok2
+{
+    flex-wrap: nowrap;
+    align-content: stretch;
+    justify-content: space-evenly;
+    display:flex;
+    margin-top: 1vh;
+}
+
+#Time{
+    display: table-caption;
+    margin: 1em;
+    color: black;
+    font-weight: bold;
+
+}
+#Bemutatkozas{
+    text-align: center;
+    width: 96%;
+    height: 100vh;
+    margin: 2%;
+  
+}
+.Onkep{
+    width: 10vw;
+    border: 1rem solid transparent;
+    border-image: url("Kepek/frame.png") 100 stretch ;
+    margin: .5rem;
+}
+
+
+.csapattagokSor{
+    display: flex;
+}
+
+.csapattagokOszlop{
+    flex: 33.3%;
+    padding: .1rem ;
+}
+
+.csapattagokOszlopGomb{
+    flex: 33.3%;
+}
+
+.tanarokSor{
+    display: flex;
+}
+
+.tanarokOszlop{
+    flex: 50%;
+    padding: .1rem;
+    
+}
+
+.tanarokOszlopGomb{
+    flex: 50%;
+    
+}
+.tanarokOszlopGomb,.csapattagokOszlopGomb{
+    box-shadow:  goldenrod 1px 1px 10px;
+    padding: .5rem;
+    margin: 1rem;
+    border: none;
+    border-radius: 2%;
+    background-color: rgba(255, 255, 255, 0.534);
+    font-weight: bold;
+
+}
+
+.csapattagokOszlopGomb:hover, .tanarokOszlopGomb:hover{
+    box-shadow: 0 0 10px 0 goldenrod inset, 0 0 10px 5px goldenrod;
+    border: none;
+    border-radius: 5%;
+    background-color: #969892;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-shadow: black 3px 3px 1px;
+    cursor: pointer;
+}
+
+#SlideshowDiv{
+    text-align: center;
+    width: 90%;
+    height: 50vh;
+    padding: 3%;
+    margin: 2%;
+    margin-top: 20vh;
+}

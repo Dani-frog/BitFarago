@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="kemenyseprostyle.css">
+    <script src="kemenyseproscript.js" defer></script>
+    <title>Bitfaragó</title>
+</head>
+<body>
+    <div class="cimSor">
+        <div id="Time" class="cimOszlop1"></div>
+        <div id="cim" class="cimOszlop2"><h1>Kéményseprők V2</h1></div>
+    </div>
+    <div id="oldal">
+        <div id="Bemutatkozas">
+            <div class="csapattagokSor">
+                <div id="Kep1" class="csapattagokOszlop" >
+                    <img class="Onkep" src="Kepek/Dani.png" alt="Daniról kép">
+                </div>
+                <div id="Kep2" class="csapattagokOszlop" >
+                    <img class="Onkep" src="Kepek/Boti.png" alt="Botiról kép">
+                </div>
+                <div id="Kep3" class="csapattagokOszlop" >
+                    <img class="Onkep" src="Kepek/Alex.png" alt="Alexről kép">
+                </div>   
+            </div>
+            <div class="csapattagokSor">
+                <h2 class="csapattagokOszlop">Tóth Dániel</h2>
+                <h2 class="csapattagokOszlop">Jakab Botond</h2>
+                <h2 class="csapattagokOszlop">Havasi Alex</h2>
+            </div>
+            <div id="gombok" class="csapattagokSor">
+                <input type="button" value="Leírás" onclick="Leiras(1)" id="gomb1" class="csapattagokOszlopGomb" >
+                <input type="button" value="Leírás" onclick="Leiras(2)" id="gomb2" class="csapattagokOszlopGomb" >
+                <input type="button" value="Leírás" onclick="Leiras(3)" id="gomb3" class="csapattagokOszlopGomb" >
+            </div>
+            <div id="Leiras"></div>
+            <div id="gombok2" class="tanarokSor">
+                <input type="button" value="Leírás" onclick="Leiras(5)" id="gomb5" class="tanarokOszlopGomb">
+                <input type="button" value="Leírás" onclick="Leiras(4)" id="gomb4" class="tanarokOszlopGomb">
+            </div>
+            <div class="tanarokSor">
+                <h2 class="tanarokOszlop">Szabó Dániel</h2>
+                <h2 class="tanarokOszlop">Szabó Emánuel</h2>
+            </div>
+            <div class="tanarokSor">
+                <div id="Kep4" class="tanarokOszlop" >
+                    <img class="Onkep" src="Kepek/SzabDan.jpg" alt="Szabó Dánielről kép">
+                </div>
+                <div id="Kep5" class="tanarokOszlop" >
+                    <img class="Onkep" src="Kepek/Szem.jpg" alt="Szabó Emánuelről kép">
+                </div>
+            </div>
+        </div>
+        <div id="SlideshowDiv">
+            <input type="button" value="Következő" onclick="KoviKep()">
+            <div id="Slideshow"></div>
+        </div>
+    </div>
+    
+    
+
+
+</body>
+</html>
