@@ -1,7 +1,50 @@
- .plakat{
+body{
+   /* #151515 #FFD700 #F2F4CD*/
+   background: radial-gradient(ellipse at top,  #969892, transparent),
+               radial-gradient(ellipse at bottom, rgb(78, 78, 78), transparent);
+   background-attachment: fixed;
+   background-size: cover;
+   position: relative;
+}
+
+.plakat{
     border-radius: 5%;
     max-width: 50%;
     /*height: auto;*/
-    object-fit: cover;
-    
- }
+    object-fit: cover;  
+}
+
+.szelektor{
+   box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 10px 4px rgb(255, 255, 255);
+   margin-top: 2vw;
+   font-size: 2vw;
+   height: auto;
+   text-align: center;
+   background-color: rgba(145, 139, 139, 0.438);
+   display: inline-block;
+   border: 5px solid black;
+   border-radius: 7%;
+   padding: 20rem;
+   margin: 2.5%;
+}
+
+#oldal{
+   display: flex;
+   justify-content: center;
+}
+
+.gomb{
+   align-self: center;
+   font-size: 1.5vw;
+   border-radius: 10%;
+   padding: 0.5vw;
+}
+.gomb:hover{
+   box-shadow: 0 0 10px 0 black inset, 0 0 10px 5px grey;
+   border: none;
+   background-color: #969892;
+   color: rgb(255, 255, 255);
+   text-shadow: black 3px 3px 1px;
+   cursor: pointer;
+   transition: all .4s ease-in-out;
+}

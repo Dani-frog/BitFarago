@@ -44,10 +44,15 @@ body{
     /*overflow: auto;*/
     font-style: italic;
     font-weight: bold;
+    font-size: 1.5vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
     padding: 1%;
     word-wrap: break-word;
     white-space: pre-wrap;
     word-break: break-word;
+    text-align:justify;
+    line-height: 2em;
 }
 
 
@@ -177,6 +182,7 @@ body{
     /*width: 90%;*/
     height: 10vh;
     margin-top: 30vh;
+
 }
 
 #SlideshowDiv img{
@@ -191,6 +197,7 @@ body{
     height: auto;
     background-color: rgba(255, 255, 255, 0.534);
     transition: all .5s ease-in-out;
+    font-size: 1vw;
 }
 
 #Slideshow-button:hover{

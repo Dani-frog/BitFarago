@@ -25,7 +25,7 @@ var filmek =[
 
 const teszt = document.getElementById("teszt");   
 
-
+/*
 for (let i = 0; i < filmek.length; i++) {
     
 
@@ -43,3 +43,8 @@ for (let i = 0; i < filmek.length; i++) {
     }
     
 } ;
+*/
+
+function MivanSelectelve(params) {
+    
+}
