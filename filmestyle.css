@@ -30,10 +30,68 @@ body{
 }
 
 #oldal{
+   margin-top: 2vh;
    display: flex;
    flex-direction: column;
    align-items: center;
 }
+
+.navgombok{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+
+.navgombok button {
+   width: 10%;
+   background-color: rgba(119, 115, 115, 0.63);
+   border: black solid 2px;
+   box-shadow:0 0 2px 2px rgb(87, 82, 82);
+   padding: 10px 24px;
+   cursor: pointer;
+   float:none; 
+   overflow: hidden;
+   transition: all .4s ease-in-out;
+}
+
+#nav1:hover{
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   color: rgb(255, 255, 255);
+   box-shadow:0 0 4px 4px rgb(87, 82, 82);
+   font-weight: bold;
+   text-shadow: black 3px 3px 1px;
+   cursor: pointer;
+   background-color: #282926;
+   border-radius:10px 0% 0% 50px;
+   transition: all .4s ease-in-out;
+}
+
+#nav2:hover{
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   color: rgb(255, 255, 255);
+   box-shadow:0 0 4px 4px rgb(87, 82, 82);
+   font-weight: bold;
+   text-shadow: black 3px 3px 1px;
+   cursor: pointer;
+   background-color: #282926;
+   border-radius:0% 10px 50px 0%;
+   transition: all .4s ease-in-out;
+}
+
+#nav1{
+   margin-right: 2px;
+   border-radius: 35px 0% 0% 75px;
+   font-size: large;
+   font-weight: bold;
+}
+
+#nav2{
+   margin-left: 2px;
+   border-radius: 0% 35px 75px 0%;
+   font-size: large;
+   font-weight: bold;
+}
+
 
 .gomb{
    flex: 20%;

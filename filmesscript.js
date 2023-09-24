@@ -7,6 +7,12 @@ var filmek =[
     {id:3,cim:"Avatár",ev:"2009",kategoria:"scifi",boritoid:3},
     {id:4,cim:"A Gyűrűk Ura",ev:"2001",kategoria:"fantasy",boritoid:4},
     {id:5,cim:"Gru",ev:"2010",kategoria:"mese",boritoid:5},
+    {id:6,cim:"Narnia",ev:"2010",kategoria:"fantasy",boritoid:6},
+    {id:7,cim:"Star Wars: VII",ev:"2015",kategoria:"scifi",boritoid:7},
+    {id:8,cim:"Nagyfiúk",ev:"2010",kategoria:"humor",boritoid:8},
+    {id:9,cim:"Agymenők",ev:"2007",kategoria:"sorozat",boritoid:9},
+    {id:10,cim:"Ragyogás",ev:"1980",kategoria:"horror",boritoid:10},
+    {id:11,cim:"Hellraiser",ev:"2022",kategoria:"horror",boritoid:11}
     /*
     {id:6,cim:"Narnia Krónikái",ev:"2005",kategoria:"Fantasy",boritoid:1},
     {id:7,cim:"Star Wars IV",ev:"1977",kategoria:"scifi",boritoid:1},
