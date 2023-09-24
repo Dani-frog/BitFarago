@@ -14,7 +14,7 @@ var filmek =[
     {id:10,cim:"Ragyogás",ev:"1980",kategoria:"horror",boritoid:10},
     {id:11,cim:"Hellraiser",ev:"2022",kategoria:"horror",boritoid:11}
     /*
-    {id:6,cim:"Narnia Krónikái",ev:"2005",kategoria:"Fantasy",boritoid:1},
+    {id:6,cim:"Narnia Krónikái",ev:"2005",kategoria:"fantasy",boritoid:1},
     {id:7,cim:"Star Wars IV",ev:"1977",kategoria:"scifi",boritoid:1},
     {id:8,cim:"Nagyfiúk",ev:"2010",kategoria:"humor",boritoid:1}*/
     /*
@@ -90,8 +90,12 @@ function Megjelenites(){
             let filmev = document.createElement("h3");
             filmev.innerHTML = "Év: "+filmek[i].ev;
 
+            let filmkat = document.createElement("h5");
+            filmkat.innerHTML = "Kategória: "+filmek[i].kategoria;
+
             filmdiv.appendChild(filmcim);
             filmdiv.appendChild(filmev);
+            filmdiv.appendChild(filmkat);
             filmdiv.appendChild(filmkep);
             filmsorDiv.appendChild(filmdiv);
             if(x%4==3){
