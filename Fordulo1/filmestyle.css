@@ -1,0 +1,138 @@
+body{
+   /* #151515 #FFD700 #F2F4CD*/
+   background: radial-gradient(ellipse at top,  #969892, transparent),
+               radial-gradient(ellipse at bottom, rgb(78, 78, 78), transparent);
+   background-attachment: fixed;
+   background-size: cover;
+   position: relative;
+}
+
+.plakat{
+    border-radius: 5%;
+    max-width: 50%;
+    /*height: auto;*/
+    object-fit: cover;  
+}
+
+.szelektor{
+   flex: 80%;
+   box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 10px 4px rgb(255, 255, 255);
+   margin-top: 2vh;
+   font-size: 3vh;
+   height: auto;
+   text-align: center;
+   background-color: rgba(145, 139, 139, 0.438);
+   display: inline-block;
+   border: 5px solid black;
+   border-radius: 7%;
+   padding: 10vw;
+   margin: 2.5%;
+}
+
+#oldal{
+   margin-top: 2vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.navgombok{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+
+.navgombok button {
+   width: 10%;
+   background-color: rgba(119, 115, 115, 0.63);
+   border: black solid 2px;
+   box-shadow:0 0 2px 2px rgb(87, 82, 82);
+   padding: 10px 24px;
+   cursor: pointer;
+   float:none; 
+   overflow: hidden;
+   transition: all .4s ease-in-out;
+}
+
+#nav1:hover{
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   color: rgb(255, 255, 255);
+   box-shadow:0 0 4px 4px rgb(87, 82, 82);
+   font-weight: bold;
+   text-shadow: black 3px 3px 1px;
+   cursor: pointer;
+   background-color: #282926;
+   border-radius:10px 0% 0% 50px;
+   transition: all .4s ease-in-out;
+}
+
+#nav2:hover{
+   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+   color: rgb(255, 255, 255);
+   box-shadow:0 0 4px 4px rgb(87, 82, 82);
+   font-weight: bold;
+   text-shadow: black 3px 3px 1px;
+   cursor: pointer;
+   background-color: #282926;
+   border-radius:0% 10px 50px 0%;
+   transition: all .4s ease-in-out;
+}
+
+#nav1{
+   margin-right: 2px;
+   border-radius: 35px 0% 0% 75px;
+   font-size: large;
+   font-weight: bold;
+}
+
+#nav2{
+   margin-left: 2px;
+   border-radius: 0% 35px 75px 0%;
+   font-size: large;
+   font-weight: bold;
+}
+
+
+.gomb{
+   flex: 20%;
+   border: none;
+   align-self: center;
+   font-size: 2vh;
+   border-radius: 10%;
+   padding: 1vw;
+   margin: 1vw;
+}
+.gomb:hover{
+   box-shadow: 0 0 10px 0 black inset, 0 0 10px 5px grey;
+   border: none;
+   background-color: #969892;
+   color: rgb(255, 255, 255);
+   text-shadow: black 3px 3px 1px;
+   cursor: pointer;
+   transition: all .6s ease-in-out;
+}
+
+#filmekDiv{
+   width: 100%;
+   height: 50rem;
+}
+
+.filmsorDiv{
+   display: flex;
+   margin: 2%;
+   width: 96%;
+}
+
+.film{
+   padding:1%;
+   text-align: center;
+}
+
+.filmkep{
+   max-width: 100%;
+   max-height: 100%;
+   box-shadow: 0 0 10px 0 rgb(255, 255, 255) inset, 0 0 10px 5px rgb(255, 255, 255);
+   border: solid black 3px;
+   border-radius: 3%;
+}
+
