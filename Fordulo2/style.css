@@ -1,10 +1,10 @@
-.board {
+#tabla {
     display: grid;
     grid-template-columns: repeat(8, 50px);
-    grid-template-rows: repeat(8, 50px);
+    grid-template-rows: repeat(12, 50px);
 }
 
-.cell {
+.cella{
     width: 50px;
     height: 50px;
     border: 1px solid black;
@@ -14,11 +14,11 @@
     font-size: 30px;
 }
 
-.black {
-    background-color: #d18b47;
+.fekete {
+    background-color: black;
     color: white;
 }
 
-.white {
-    background-color: #ffce9e;
+.feher {
+    background-color: white;
 }
