@@ -86,7 +86,7 @@ function Kattint(div){
             }
         }
     }else{
-        if(div.classList().includes("Kivalasztott")){
+        if(div.classList().includes("JoMezo")){
             Lepes();
         }
     }
@@ -116,8 +116,47 @@ function LehetsegesLepesek(div){
     }
 }
 
+function JoDivMegtalal(sor,oszlop){
+    let t = document.getElementsByClassName("cella");
+    for(let i = 0;i<t.length;i++){
+        console.log(t[i].dataset.sor)
+        console.log(sor)
+        console.log(t[i].dataset.oszlop)
+        console.log(oszlop)
+        if(t[i].dataset.sor == sor && t[i].dataset.oszlop == oszlop){
+
+            console.log("az a jó XDDD")
+            return t[i];
+        }
+    }
+}
+
 function FeherParasztLepes(div){
-    console.log("feherparaszt");
+    if(feherParasztLe){
+        if(parseInt(div.dataset.sor+1) <= 11 && parseInt(div.dataset.oszlop)+1 <= 7){
+            if(Mezok[parseInt(div.dataset.sor)+1][parseInt(div.dataset.oszlop)+1] != " "){
+                if(Mezok[parseInt(div.dataset.sor)+1][parseInt(div.dataset.oszlop)+1] == Mezok[parseInt(div.dataset.sor)+1][parseInt(div.dataset.oszlop)+1].toUpperCase()){
+                    JoDivMegtalal(parseInt(div.dataset.sor)+1,parseInt(div.dataset.oszlop)+1).classList.add("JoMezo");
+                }
+            }
+        }  
+        else if(parseInt(div.dataset.sor)+1 <= 11 && parseInt(div.dataset.oszlop)-1 >= 0){
+            if(Mezok[parseInt(div.dataset.sor)+1][parseInt(div.dataset.oszlop)-1] != " "){
+                if(Mezok[div.dataset.sor+1][div.dataset.oszlop-1] == Mezok[div.dataset.sor+1][div.dataset.oszlop-1].toUpperCase()){
+                    JoDivMegtalal(div.dataset.sor+1,div.dataset.oszlop-1).classList.add("JoMezo");
+                }
+            }
+        }
+        let x = 1;
+        for(let i = div.dataset.sor; i<12;i++){
+            if(x<4 && Mezok[div.dataset.sor+x][div.dataset.oszlop] == " "){
+                JoDivMegtalal(div.dataset.sor+x,div.dataset.oszlop).classList.add("JoMezo");
+            }else{
+                break;
+            }
+            x++;
+        }
+    }
 }
 function FeketeParasztLepes(div){
     console.log("feketeparaszt");

@@ -61,7 +61,7 @@ body{
 
 .cella:hover{
     background-color: rgba(49, 199, 49, 0.705);
-    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 8px 2px rgb(0, 0, 0) inset;
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 10px 5px rgb(0, 0, 0) inset;
 }
 
 .fekete {
@@ -82,4 +82,9 @@ input::-webkit-inner-spin-button {
 .kep{
     width: 100%;
     height: auto;
+}
+
+.JoMezo{
+    background-color: rgba(16, 241, 16, 0.822);
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 4px 1px rgb(0, 0, 0) inset;
 }
