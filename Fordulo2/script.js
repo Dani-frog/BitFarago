@@ -1,7 +1,8 @@
 const jatekTer = document.getElementById("jatekTer");
+var korokSzama = 0;
 var Mezok = [["b","l","f","q","k","f","l","b"],
-            ["p","p","p","p","p","p","p"," "],
-            [" "," "," "," "," "," "," ","b"],
+            ["p","p","p","p","p","p","p","p"],
+            [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
@@ -11,13 +12,16 @@ var Mezok = [["b","l","f","q","k","f","l","b"],
             [" "," "," "," "," "," "," "," "],
             ["P","P","P","P","P","P","P","P"],
             ["B","L","F","K","Q","F","L","B"]];
+var kiJelolt;
 var feherLep = true;
 var feherParasztLe = true;
 var FeketeParasztFel = true;
+var duplaLepes = false;
 
 
 function Main(){
     if(document.getElementById("korbeInp").value != ''){
+        korokSzama = parseInt(document.getElementById("korbeInp").value);
         jatekTer.innerHTML = "";
         TablaGen();
     }else{
@@ -62,6 +66,12 @@ function TablaGen() {
             feher = !feher;
             cella.dataset.sor = i;
             cella.dataset.oszlop = j;
+            if(Mezok[i][j] == "p"){
+                cella.dataset.Le = true;
+            }
+            if(Mezok[i][j] == "P"){
+                cella.dataset.Le = false;
+            }
             cella.setAttribute("onclick", "Kattint(this)");
             if(Mezok[i][j]!=" "){
                 let kep = document.createElement("img");
@@ -76,21 +86,51 @@ function TablaGen() {
 
 function Kattint(div){
     if(Mezok[div.dataset.sor][div.dataset.oszlop] != " "){
-        ClassTorles();
         if(feherLep){
             if(Mezok[div.dataset.sor][div.dataset.oszlop] == Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase()){
+                ClassTorles();
                 LehetsegesLepesek(div);
+                kiJelolt = div;
+            }
+            else if(Mezok[div.dataset.sor][div.dataset.oszlop] == Mezok[div.dataset.sor][div.dataset.oszlop].toUpperCase() && div.classList.contains("lephet")){
+                Lepes(div);
             }
         }else{
             if(Mezok[div.dataset.sor][div.dataset.oszlop] == Mezok[div.dataset.sor][div.dataset.oszlop].toUpperCase()){
+                ClassTorles();
                 LehetsegesLepesek(div);
+                kiJelolt = div;
+            }
+            else if(Mezok[div.dataset.sor][div.dataset.oszlop] == Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() && div.classList.contains("lephet")){
+                Lepes(div);
             }
         }
     }else{
-        if(div.classList.includes("Kivalasztott")){
-            Lepes();
+        if(div.classList.contains("lephet")){
+            Lepes(div);
         }
     }
+}
+
+function Lepes(div){
+    if(!duplaLepes){
+        feherLep = !feherLep;
+    }
+    else{
+        duplaLepes = !duplaLepes;
+    }
+    if(kiJelolt.dataset.Le != undefined){
+        div.dataset.Le = kiJelolt.dataset.Le;
+        delete kiJelolt.dataset.Le;
+    }
+    let temp = kiJelolt.innerHTML;
+    kiJelolt.innerHTML = "";
+    div.innerHTML = temp;
+    let Mtemp = Mezok[kiJelolt.dataset.sor][kiJelolt.dataset.oszlop];
+    Mezok[kiJelolt.dataset.sor][kiJelolt.dataset.oszlop] = " ";
+    Mezok[div.dataset.sor][div.dataset.oszlop] = Mtemp;
+    ClassTorles();
+    
 }
 
 function ClassTorles(){
@@ -102,11 +142,8 @@ function ClassTorles(){
 }
 
 function LehetsegesLepesek(div){
-    if(Mezok[div.dataset.sor][div.dataset.oszlop] == "p"){
-        FeherParasztLepes(div);
-    }
-    else if(Mezok[div.dataset.sor][div.dataset.oszlop] == "P"){
-        FeketeParasztLepes(div);
+    if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "p"){
+        ParasztLepes(div);
     }
     else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "b"){
         BastyaLepes(div);
@@ -134,16 +171,31 @@ function JoDivMegtalal(sor,oszlop){
     }
 }
 
-function FeherParasztLepes(div){
+function ParasztLepes(div){
+    if(div.dataset.sor == 0){
+        div.dataset.Le = true;
+    }
+    else if(div.dataset.sor == 11){
+        div.dataset.Le = false;
+    }
     div.classList.add("Kivalasztott");
-    if(feherParasztLe){
+    if(div.dataset.Le == 'true'){
         const sor = parseInt(div.dataset.sor);
         const oszlop = parseInt(div.dataset.oszlop);
-        if(sor+1 <= 11 && oszlop+1 <= 7 && Mezok[sor+1][oszlop+1] != " " && Mezok[sor+1][oszlop+1] == Mezok[sor+1][oszlop+1].toUpperCase()){
-            JoDivMegtalal(sor+1,oszlop+1).classList.add("lephet");
-        }  
-        else if(sor+1 <= 11 && oszlop-1 >= 0 && Mezok[sor+1][oszlop-1] != " " && Mezok[sor+1][oszlop-1] == Mezok[sor+1][oszlop-1].toUpperCase()){
-            JoDivMegtalal(sor+1,oszlop-1).classList.add("lephet");
+        if(feherLep){
+            if(sor+1 <= 11 && oszlop+1 <= 7 && Mezok[sor+1][oszlop+1] != " " && Mezok[sor+1][oszlop+1] == Mezok[sor+1][oszlop+1].toUpperCase()){
+                JoDivMegtalal(sor+1,oszlop+1).classList.add("lephet");
+            }  
+            if(sor+1 <= 11 && oszlop-1 >= 0 && Mezok[sor+1][oszlop-1] != " " && Mezok[sor+1][oszlop-1] == Mezok[sor+1][oszlop-1].toUpperCase()){
+                JoDivMegtalal(sor+1,oszlop-1).classList.add("lephet");
+            }
+        }else{
+            if(sor+1 <= 11 && oszlop+1 <= 7 && Mezok[sor+1][oszlop+1] != " " && Mezok[sor+1][oszlop+1] == Mezok[sor+1][oszlop+1].toLowerCase()){
+                JoDivMegtalal(sor+1,oszlop+1).classList.add("lephet");
+            }  
+            if(sor+1 <= 11 && oszlop-1 >= 0 && Mezok[sor+1][oszlop-1] != " " && Mezok[sor+1][oszlop-1] == Mezok[sor+1][oszlop-1].toLowerCase()){
+                JoDivMegtalal(sor+1,oszlop-1).classList.add("lephet");
+            }
         }
         let x = 1;
         for(let i = div.dataset.sor; i<12;i++){
@@ -155,38 +207,106 @@ function FeherParasztLepes(div){
             x++;
         }
     }
-}
-function FeketeParasztLepes(div){
-    div.classList.add("Kivalasztott");
-    console.log("feketeparaszt");
+    else if(div.dataset.Le == 'false'){
+        const sor = parseInt(div.dataset.sor);
+        const oszlop = parseInt(div.dataset.oszlop);
+        if(feherLep){
+            if(sor-1 >= 0 && oszlop+1 <= 7 && Mezok[sor-1][oszlop+1] != " " && Mezok[sor-1][oszlop+1] == Mezok[sor-1][oszlop+1].toUpperCase()){
+                JoDivMegtalal(sor-1,oszlop+1).classList.add("lephet");
+            }  
+            if(sor-1 >= 0 && oszlop-1 >= 0 && Mezok[sor-1][oszlop-1] != " " && Mezok[sor-1][oszlop-1] == Mezok[sor-1][oszlop-1].toUpperCase()){
+                JoDivMegtalal(sor-1,oszlop-1).classList.add("lephet");
+            }
+        }else{
+            if(sor-1 >= 0 && oszlop+1 <= 7 && Mezok[sor-1][oszlop+1] != " " && Mezok[sor-1][oszlop+1] == Mezok[sor-1][oszlop+1].toLowerCase()){
+                JoDivMegtalal(sor-1,oszlop+1).classList.add("lephet");
+            }  
+            if(sor-1 >= 0 && oszlop-1 >= 0 && Mezok[sor-1][oszlop-1] != " " && Mezok[sor-1][oszlop-1] == Mezok[sor-1][oszlop-1].toLowerCase()){
+                JoDivMegtalal(sor-1,oszlop-1).classList.add("lephet");
+            }
+        }
+        let x = 1;
+        for(let i = div.dataset.sor; i>0;i--){
+            if(x<4 && Mezok[sor-x][oszlop] == " "){
+                JoDivMegtalal(sor-x,oszlop).classList.add("lephet");
+            }else{
+                break;
+            }
+            x++;
+        }
+    }
 }
 function BastyaLepes(div) {
     div.classList.add("Kivalasztott");
-    let i = 1;
     const sor = parseInt(div.dataset.sor);
     const oszlop = parseInt(div.dataset.oszlop);
-
-    while (sor + i < 12 && Mezok[sor + i][oszlop] === " ") {
-        JoDivMegtalal(sor+i,oszlop).classList.add("lephet");
-        i++;
+    for(let i = sor-1; i>=0;i--){
+        if(Mezok[i][oszlop]==" "){
+            JoDivMegtalal(i,oszlop).classList.add("lephet");
+        }
+        if(Mezok[i][oszlop]!=" "){
+            if(feherLep){
+                if(Mezok[i][oszlop] == Mezok[i][oszlop].toUpperCase()){
+                    JoDivMegtalal(i,oszlop).classList.add("lephet");
+                }
+            }else{
+                if(Mezok[i][oszlop] == Mezok[i][oszlop].toLowerCase()){
+                    JoDivMegtalal(i,oszlop).classList.add("lephet");
+                }
+            }
+            break;
+        }
     }
-
-    i = 1;
-    while (sor - i >= 0 && Mezok[sor - i][oszlop] === " ") {
-        JoDivMegtalal(sor-i,oszlop).classList.add("lephet");
-        i++;
+    for(let i = sor+1; i<12;i++){
+        if(Mezok[i][oszlop]==" "){
+            JoDivMegtalal(i,oszlop).classList.add("lephet");
+        }
+        if(Mezok[i][oszlop]!=" "){
+            if(feherLep){
+                if(Mezok[i][oszlop] == Mezok[i][oszlop].toUpperCase()){
+                    JoDivMegtalal(i,oszlop).classList.add("lephet");
+                }
+            }else{
+                if(Mezok[i][oszlop] == Mezok[i][oszlop].toLowerCase()){
+                    JoDivMegtalal(i,oszlop).classList.add("lephet");
+                }
+            }
+            break;
+        }
     }
-
-    i = 1;
-    while (oszlop + i < 8 && Mezok[sor][oszlop + i] === " ") {
-        JoDivMegtalal(sor,oszlop+i).classList.add("lephet");
-        i++;
+    for(let i = oszlop+1; i<8;i++){
+        if(Mezok[sor][i]==" "){
+            JoDivMegtalal(sor,i).classList.add("lephet");
+        }
+        if(Mezok[sor][i]!=" "){
+            if(feherLep){
+                if(Mezok[sor][i] == Mezok[sor][i].toUpperCase()){
+                    JoDivMegtalal(sor,i).classList.add("lephet");
+                }
+            }else{
+                if(Mezok[sor][i] == Mezok[sor][i].toLowerCase()){
+                    JoDivMegtalal(sor,i).classList.add("lephet");
+                }
+            }
+            break;
+        }
     }
-
-    i = 1;
-    while (oszlop - i >= 0 && Mezok[sor][oszlop - i] === " ") {
-        JoDivMegtalal(sor,oszlop-i).classList.add("lephet");
-        i++;
+    for(let i = oszlop-1; i>=0;i--){
+        if(Mezok[sor][i]==" "){
+            JoDivMegtalal(sor,i).classList.add("lephet");
+        }
+        if(Mezok[sor][i]!=" "){
+            if(feherLep){
+                if(Mezok[sor][i] == Mezok[sor][i].toUpperCase()){
+                    JoDivMegtalal(sor,i).classList.add("lephet");
+                }
+            }else{
+                if(Mezok[sor][i] == Mezok[sor][i].toLowerCase()){
+                    JoDivMegtalal(sor,i).classList.add("lephet");
+                }
+            }
+            break;
+        }
     }
 }
 
