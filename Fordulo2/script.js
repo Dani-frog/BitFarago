@@ -124,8 +124,8 @@ function FeketeParasztLepes(div){
 }
 function BastyaLepes(div) {
     let i = 1;
-    const sor = parseInt(div.dataset.sor, 10);
-    const oszlop = parseInt(div.dataset.oszlop, 10);
+    const sor = parseInt(div.dataset.sor);
+    const oszlop = parseInt(div.dataset.oszlop);
 
     while (sor + i < 12 && Mezok[sor + i][oszlop] === " ") {
         console.log(sor + i + "" + oszlop + " IDE LÉPHETSZ");

@@ -60,8 +60,8 @@ body{
 }
 
 .lephet{
-    background-color: rgba(49, 199, 191, 0.705);
-    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 8px 2px rgb(0, 0, 0) inset;
+    background-color: rgba(56, 240, 163, 0.74);
+    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.452) , 0 0 8px 2px rgb(0, 0, 0) inset;
 }
 
 .cella:hover{
