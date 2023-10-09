@@ -76,3 +76,8 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+#kep{
+    width: 100%;
+    height: auto;
+}

@@ -61,9 +61,14 @@ function TablaGen() {
             cella.dataset.col = j;
             cella.setAttribute("onclick", "Kattint(this)");
             document.getElementById("tabla").appendChild(cella);
+            if (Mezok[i][j]=="p") {
+                var kep = document.createElement("img");
+                kep.id="kep";
+                kep.src="Kepek/p.png"
+                cella.appendChild(kep);
+            }
         }
-    }
-    
+    } 
 }
 
  function Kattint(){
