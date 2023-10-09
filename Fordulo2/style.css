@@ -59,11 +59,6 @@ body{
     font-size: 30px;
 }
 
-.lephet{
-    background-color: rgba(49, 199, 191, 0.705);
-    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 8px 2px rgb(0, 0, 0) inset;
-}
-
 .cella:hover{
     background-color: rgba(49, 199, 49, 0.705);
     box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 10px 5px rgb(0, 0, 0) inset;
@@ -89,7 +84,12 @@ input::-webkit-inner-spin-button {
     height: auto;
 }
 
-.JoMezo{
-    background-color: rgba(16, 241, 16, 0.822);
+.lephet{
+    background-color: rgba(34, 173, 34, 0.5);
     box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 4px 1px rgb(0, 0, 0) inset;
+}
+
+.Kivalasztott{
+    background-color: rgba(199, 49, 56, 0.705);
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 10px 5px rgb(0, 0, 0) inset;
 }
