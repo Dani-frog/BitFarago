@@ -87,7 +87,7 @@ function Kattint(div){
             }
         }
     }else{
-        if(div.classList.includes("JoMezo")){
+        if(div.classList.includes("Kivalasztott")){
             Lepes();
         }
     }
@@ -167,25 +167,25 @@ function BastyaLepes(div) {
     const oszlop = parseInt(div.dataset.oszlop);
 
     while (sor + i < 12 && Mezok[sor + i][oszlop] === " ") {
-        document.querySelector(`[data-sor="${sor + i}"][data-oszlop="${oszlop}"]`).classList.add("lephet");
+        JoDivMegtalal(sor+i,oszlop).classList.add("lephet");
         i++;
     }
 
     i = 1;
     while (sor - i >= 0 && Mezok[sor - i][oszlop] === " ") {
-        document.querySelector(`[data-sor="${sor - i}"][data-oszlop="${oszlop}"]`).classList.add("lephet");
+        JoDivMegtalal(sor-i,oszlop).classList.add("lephet");
         i++;
     }
 
     i = 1;
     while (oszlop + i < 8 && Mezok[sor][oszlop + i] === " ") {
-        document.querySelector(`[data-sor="${sor}"][data-oszlop="${oszlop + i}"]`).classList.add("lephet");
+        JoDivMegtalal(sor,oszlop+i).classList.add("lephet");
         i++;
     }
 
     i = 1;
     while (oszlop - i >= 0 && Mezok[sor][oszlop - i] === " ") {
-        document.querySelector(`[data-sor="${sor}"][data-oszlop="${oszlop - i}"]`).classList.add("lephet");
+        JoDivMegtalal(sor,oszlop-i).classList.add("lephet");
         i++;
     }
 }
