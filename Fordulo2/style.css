@@ -59,14 +59,9 @@ body{
     font-size: 30px;
 }
 
-.lephet{
-    background-color: rgba(56, 240, 163, 0.74);
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.452) , 0 0 8px 2px rgb(0, 0, 0) inset;
-}
-
 .cella:hover{
     background-color: rgba(49, 199, 49, 0.705);
-    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 8px 2px rgb(0, 0, 0) inset;
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 10px 5px rgb(0, 0, 0) inset;
 }
 
 .fekete {
@@ -87,4 +82,14 @@ input::-webkit-inner-spin-button {
 .kep{
     width: 100%;
     height: auto;
+}
+
+.lephet{
+    background-color: rgba(34, 173, 34, 0.5);
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 4px 1px rgb(0, 0, 0) inset;
+}
+
+.Kivalasztott{
+    background-color: rgba(199, 49, 56, 0.705);
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 10px 5px rgb(0, 0, 0) inset;
 }
