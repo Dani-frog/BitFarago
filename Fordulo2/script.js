@@ -1,8 +1,8 @@
 const jatekTer = document.getElementById("jatekTer");
 var Mezok = [["b","l","f","q","k","f","l","b"],
-            ["p","p","p","p","p","p","p","p"],
+            ["p","p","p","p","p","p","p"," "],
             [" "," "," "," "," "," "," "," "],
-            [" "," "," "," "," "," "," "," "],
+            [" "," "," "," "," "," "," ","b"],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
@@ -86,7 +86,7 @@ function Kattint(div){
             }
         }
     }else{
-        if(div.classList().includes("Kivalasztott")){
+        if(div.classList().includes("JoMezo")){
             Lepes();
         }
     }
@@ -122,9 +122,41 @@ function FeherParasztLepes(div){
 function FeketeParasztLepes(div){
     console.log("feketeparaszt");
 }
-function BastyaLepes(div){
+function BastyaLepes(div) {
+    let i = 1;
+    const sor = parseInt(div.dataset.sor, 10);
+    const oszlop = parseInt(div.dataset.oszlop, 10);
+
+    while (sor + i < 12 && Mezok[sor + i][oszlop] === " ") {
+        console.log(sor + i + "" + oszlop + " IDE LÉPHETSZ");
+        document.querySelector(`[data-sor="${sor + i}"][data-oszlop="${oszlop}"]`).classList.add("lephet");
+        i++;
+    }
+
+    i = 1;
+    while (sor - i >= 0 && Mezok[sor - i][oszlop] === " ") {
+        console.log(sor - i + "" + oszlop + " IDE LÉPHETSZ");
+        document.querySelector(`[data-sor="${sor - i}"][data-oszlop="${oszlop}"]`).classList.add("lephet");
+        i++;
+    }
+
+    i = 1;
+    while (oszlop + i < 8 && Mezok[sor][oszlop + i] === " ") {
+        console.log(sor + "" + oszlop + i + " IDE LÉPHETSZ");
+        document.querySelector(`[data-sor="${sor}"][data-oszlop="${oszlop + i}"]`).classList.add("lephet");
+        i++;
+    }
+
+    i = 1;
+    while (oszlop - i >= 0 && Mezok[sor][oszlop - i] === " ") {
+        console.log(sor + "" + oszlop - i + " IDE LÉPHETSZ");
+        document.querySelector(`[data-sor="${sor}"][data-oszlop="${oszlop - i}"]`).classList.add("lephet");
+        i++;
+    }
+
     console.log("bastya");
 }
+
 function LoLepes(div){
     console.log("lo");
 }

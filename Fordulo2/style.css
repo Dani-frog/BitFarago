@@ -59,6 +59,11 @@ body{
     font-size: 30px;
 }
 
+.lephet{
+    background-color: rgba(49, 199, 191, 0.705);
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 8px 2px rgb(0, 0, 0) inset;
+}
+
 .cella:hover{
     background-color: rgba(49, 199, 49, 0.705);
     box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 8px 2px rgb(0, 0, 0) inset;
