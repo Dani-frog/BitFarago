@@ -1,52 +1,41 @@
-var tabla=[["b","h","f","q","k","f","h","b"],
-            ["g","g","g","g","g","g","g","g"],
-            ["","","","","","","",""],
-            ["","","","","","","",""],
-            ["","","","","","","",""],
-            ["","","","","","","",""],
-            ["","","","","","","",""],
-            ["","","","","","","",""],
-            ["","","","","","","",""],
-            ["","","","","","","",""],
-            ["G","G","G","G","G","G","G"],
-            ["B","H","F","K","Q","F","H","B"]];
+var jatekTer = [["b","l","f","q","k","f","l","b"],
+                ["p","p","p","p","p","p","p","p"],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                [" "," "," "," "," "," "," "," "],
+                ["P","P","P","P","P","P","P","P"],
+                ["B","L","F","K","Q","F","L","B"]];
 
-            function Jatekeleje()
-            {
-            
-                document.getElementById("tabla").style.opacity="100%";
-                document.getElementById("korongok").style.opacity="100%";
-                document.getElementById("pontok").style.opacity="100%";
-                Jatekveg = false;
-                var tabla = document.getElementById("tabla");
-                korongok = document.getElementById("korongok");
-                pontok = document.getElementById("pontok");
-                mozoghatkarika=document.getElementById("mozoghatkarika");
-                matrix =[
-                    [0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0],
-                    [0,0,0,2,1,0,0,0],
-                    [0,0,0,1,2,0,0,0],
-                    [0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0],
-                    [0,0,0,0,0,0,0,0]
-                ];
-                Tablazat();
-                megjelenito();
-                karikamegjelenito();
-                pontokvalt();
-                document.getElementById("Kezdogomb").style.zIndex=2;
-                document.getElementById("Kezdogomb").style.display="none";
-                var gyozelemszamlalo = document.getElementById("osszeseredmeny");
-                pont = document.createElement("p");
-                pont.innerHTML = "Fekete győzelmek:"+eredmeny[0]+" Fehér győzelmek:"+eredmeny[1];
-                gyozelemszamlalo.appendChild(pont);
-                if (lefutott) {
-                    document.getElementById("nyert").parentNode.removeChild(document.getElementById("nyert"));
-                }
-                
-                
-               
-            }
-            
+function Main(){
+    TablaGen();
+}
+
+Main();
+
+
+
+function TablaGen() {
+    let feher = false;
+    for (let i = 0; i < 12; i++) {
+        feher = !feher;
+        for (let j = 0; j < 8; j++) {
+            const cella = document.createElement("div");
+            cella.classList.add("cella");
+            cella.classList.add((feher) ? "feher" : "fekete");
+            feher = !feher;
+            cella.dataset.row = i;
+            cella.dataset.col = j;
+            cella.setAttribute("onclick", "Kattint(this)");
+            document.getElementById("tabla").appendChild(cella);
+        }
+    }
+}
+
+ function Kattint(){
+
+ }
