@@ -320,7 +320,27 @@ function FutoLepes(div){
 }
 function KiralyLepes(div){
     div.classList.add("Kivalasztott");
-    console.log("kiraly");
+    const sor = parseInt(div.dataset.sor);
+    const oszlop = parseInt(div.dataset.oszlop);
+    for(let i = sor-1;i<=sor+1;i++){
+        for(let j = oszlop-1;j<=oszlop+1;j++){
+            if(i>=0 && i<12 && j>=0 && j < 8){
+                if(Mezok[i][j] == " "){
+                    JoDivMegtalal(i,j).classList.add("lephet");
+                }else{
+                    if(feherLep){
+                        if(Mezok[i][j]==Mezok[i][j].toUpperCase()){
+                            JoDivMegtalal(i,j).classList.add("lephet");
+                        }
+                    }else{
+                        if(Mezok[i][j]==Mezok[i][j].toLowerCase()){
+                            JoDivMegtalal(i,j).classList.add("lephet");
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 function KiralynoLepes(div){
     div.classList.add("Kivalasztott");
