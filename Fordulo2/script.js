@@ -94,46 +94,46 @@ function Kattint(div){
 
 function LehetsegesLepesek(div){
     if(Mezok[div.dataset.sor][div.dataset.oszlop] == "p"){
-        FeherParasztLepes();
+        FeherParasztLepes(div);
     }
     else if(Mezok[div.dataset.sor][div.dataset.oszlop] == "P"){
-        FeketeParasztLepes();
+        FeketeParasztLepes(div);
     }
     else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "b"){
-        BastyaLepes();
+        BastyaLepes(div);
     }
     else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "l"){
-        LoLepes();
+        LoLepes(div);
     }
     else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "f"){
-        FutoLepes();
+        FutoLepes(div);
     }
     else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "k"){
-        KiralyLepes();
+        KiralyLepes(div);
     }
     else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "q"){
-        KiralynoLepes();
+        KiralynoLepes(div);
     }
 }
 
-function FeherParasztLepes(){
-
+function FeherParasztLepes(div){
+    console.log("feherparaszt");
 }
-function FeketeParasztLepes(){
-    
+function FeketeParasztLepes(div){
+    console.log("feketeparaszt");
 }
-function BastyaLepes(){
-
+function BastyaLepes(div){
+    console.log("bastya");
 }
-function LoLepes(){
-
+function LoLepes(div){
+    console.log("lo");
 }
-function FutoLepes(){
-
+function FutoLepes(div){
+    console.log("futo");
 }
-function KiralyLepes(){
-
+function KiralyLepes(div){
+    console.log("kiraly");
 }
-function KiralynoLepes(){
-
+function KiralynoLepes(div){
+    console.log("kiralyno");
 }
