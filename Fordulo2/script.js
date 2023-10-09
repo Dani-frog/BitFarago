@@ -63,7 +63,7 @@ function TablaGen() {
             document.getElementById("tabla").appendChild(cella);
             if (Mezok[i][j]=="p") {
                 var kep = document.createElement("img");
-                kep.id="kep";
+                kep.className="kep";
                 kep.src="Kepek/p.png"
                 cella.appendChild(kep);
             }
@@ -71,6 +71,6 @@ function TablaGen() {
     } 
 }
 
- function Kattint(){
+function Kattint(){
 
- }
+}
