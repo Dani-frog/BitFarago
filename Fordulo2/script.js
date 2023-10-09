@@ -199,7 +199,7 @@ function ParasztLepes(div){
         }
         let x = 1;
         for(let i = div.dataset.sor; i<12;i++){
-            if(x<4 && Mezok[sor+x][oszlop] == " "){
+            if((sor+x <12) && x<4 && Mezok[sor+x][oszlop] == " "){
                 JoDivMegtalal(sor+x,oszlop).classList.add("lephet");
             }else{
                 break;
