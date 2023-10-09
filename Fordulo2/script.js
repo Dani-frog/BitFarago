@@ -11,6 +11,9 @@ var Mezok = [["b","l","f","q","k","f","l","b"],
             [" "," "," "," "," "," "," "," "],
             ["P","P","P","P","P","P","P","P"],
             ["B","L","F","K","Q","F","L","B"]];
+var feherLep = true;
+var feherParasztLe = true;
+var FeketeParasztFel = true;
 
 
 function Main(){
@@ -57,20 +60,80 @@ function TablaGen() {
             cella.classList.add("cella");
             cella.classList.add((feher) ? "feher" : "fekete");
             feher = !feher;
-            cella.dataset.row = i;
-            cella.dataset.col = j;
+            cella.dataset.sor = i;
+            cella.dataset.oszlop = j;
             cella.setAttribute("onclick", "Kattint(this)");
-            document.getElementById("tabla").appendChild(cella);
-            if (Mezok[i][j]=="p") {
-                var kep = document.createElement("img");
-                kep.className="kep";
-                kep.src="Kepek/p.png"
+            if(Mezok[i][j]!=" "){
+                let kep = document.createElement("img");
+                kep.classList.add("kep");
+                kep.src="Kepek/"+((Mezok[i][j] == Mezok[i][j].toUpperCase()) ? (Mezok[i][j].toLowerCase())+"2" : Mezok[i][j])+".png"
                 cella.appendChild(kep);
             }
+            document.getElementById("tabla").appendChild(cella);
         }
     } 
 }
 
-function Kattint(){
+function Kattint(div){
+    if(Mezok[div.dataset.sor][div.dataset.oszlop] != " "){
+        if(feherLep){
+            if(Mezok[div.dataset.sor][div.dataset.oszlop] == Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase()){
+                LehetsegesLepesek(div);
+            }
+        }else{
+            if(Mezok[div.dataset.sor][div.dataset.oszlop] == Mezok[div.dataset.sor][div.dataset.oszlop].toUpperCase()){
+                LehetsegesLepesek(div);
+            }
+        }
+    }else{
+        if(div.classList().includes("Kivalasztott")){
+            Lepes();
+        }
+    }
+}
 
+function LehetsegesLepesek(div){
+    if(Mezok[div.dataset.sor][div.dataset.oszlop] == "p"){
+        FeherParasztLepes(div);
+    }
+    else if(Mezok[div.dataset.sor][div.dataset.oszlop] == "P"){
+        FeketeParasztLepes(div);
+    }
+    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "b"){
+        BastyaLepes(div);
+    }
+    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "l"){
+        LoLepes(div);
+    }
+    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "f"){
+        FutoLepes(div);
+    }
+    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "k"){
+        KiralyLepes(div);
+    }
+    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "q"){
+        KiralynoLepes(div);
+    }
+}
+
+function FeherParasztLepes(div){
+    console.log("feherparaszt");
+}
+function FeketeParasztLepes(div){
+    console.log("feketeparaszt");
+}
+function BastyaLepes(div){
+    console.log("bastya");
+}
+function LoLepes(div){
+    console.log("lo");
+}
+function FutoLepes(div){
+    console.log("futo");
+}
+function KiralyLepes(div){
+    console.log("kiraly");
+}
+function KiralynoLepes(div){
+    console.log("kiralyno");
 }
