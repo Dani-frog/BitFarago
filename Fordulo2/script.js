@@ -99,11 +99,12 @@ function SzuperGombok(){
 
 function JokerLep(){
     let gomb = document.createElement("button");
+    gomb.id = "JokerGomb;"
     gomb.textContent = "Joker lépés";
     gomb.classList.add("ExtraGombok");
     if(feherLep){
         if(!feherJokerElhasznalt){
-            gomb.setAttribute("onclick","JokerGombraKatt()");
+            gomb.setAttribute("onclick","JokerGombraKatt(this)");
             gomb.classList.add("GombElerheto");
         }else{
             gomb.removeAttribute("onclick");
@@ -111,7 +112,7 @@ function JokerLep(){
         }
     }else{
         if(!feketeJokerElhasznalt){
-            gomb.setAttribute("onclick","JokerGombraKatt()");
+            gomb.setAttribute("onclick","JokerGombraKatt(this)");
             gomb.classList.add("GombElerheto");
         }else{
             gomb.removeAttribute("onclick");
@@ -121,8 +122,9 @@ function JokerLep(){
     gombokDiv.appendChild(gomb);
 }
 
-function JokerGombraKatt(){
-    jokerAktiv = true
+function JokerGombraKatt(gomb){
+    gomb.classList.add("GombNemElerheto");
+    jokerAktiv = true;
     if(feherLep){
         if(!feherJokerElhasznalt){
             feherJokerElhasznalt = true;
@@ -136,11 +138,12 @@ function JokerGombraKatt(){
 
 function DuplalepGomb(){
     let gomb = document.createElement("button");
+    gomb.id = "DuplaGomb";
     gomb.textContent = "Dupla lépés";
     gomb.classList.add("ExtraGombok");
     if(feherLep){
         if(!feherDuplaElhasznalt){
-            gomb.setAttribute("onclick","DuplaGombraKatt()");
+            gomb.setAttribute("onclick","DuplaGombraKatt(this)");
             gomb.classList.add("GombElerheto");
         }else{
             gomb.removeAttribute("onclick");
@@ -148,7 +151,7 @@ function DuplalepGomb(){
         }
     }else{
         if(!feketeDuplaElhasznalt){
-            gomb.setAttribute("onclick","DuplaGombraKatt()");
+            gomb.setAttribute("onclick","DuplaGombraKatt(this)");
             gomb.classList.add("GombElerheto");
         }else{
             gomb.removeAttribute("onclick");
@@ -158,7 +161,8 @@ function DuplalepGomb(){
     gombokDiv.appendChild(gomb);
 }
 
-function DuplaGombraKatt(){
+function DuplaGombraKatt(gomb){
+    gomb.classList.add("GombNemElerheto");
     duplaLepesAktiv = true;
     if(feherLep){
         if(!feherDuplaElhasznalt){
@@ -267,10 +271,10 @@ function JoDivMegtalal(sor,oszlop){
 }
 
 function JokerLepes(div){
-    KiralyLepes(div);
     const sor = parseInt(div.dataset.sor);
     const oszlop = parseInt(div.dataset.oszlop);
     LoLepesek(sor,oszlop);
+    KiralynoLepes(div);
 }
 
 function ParasztLepes(div){
