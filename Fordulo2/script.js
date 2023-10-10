@@ -27,7 +27,7 @@ var feketeJokerElhasznalt = false;
 
 function Main(){
     if(document.getElementById("korbeInp").value != ''){
-        korokSzama = parseInt(document.getElementById("korbeInp").value);
+        korokSzama = Math.abs(parseInt(document.getElementById("korbeInp").value));
         jatekTer.innerHTML = "";
         TablaGen();
     }else{
