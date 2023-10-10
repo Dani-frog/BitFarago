@@ -6,9 +6,21 @@ body{
     position: relative;
 }
 
+#fo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#gombokDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center
+}
+
 #korbeDiv{
     text-align: center;
-    height: 98vh;
 }
 #korbeDiv input{
     box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 12px 6px rgb(255, 255, 255);
@@ -16,7 +28,7 @@ body{
     font-size: 3vw;
     font-weight: bold;
     width: 25%;
-    height: 5%;
+    height: 35%;
     margin: 1%;
 }
 #korbeDiv button{
@@ -26,8 +38,8 @@ body{
     border: none;
     font-weight: bold;
     font-size: inherit;
-    width: 15%;
-    height: 5%;
+    width: 15rem;
+    height: 3rem;
     margin: 1%;
 }
 #korbeDiv button:hover{
@@ -46,7 +58,6 @@ body{
     display: grid;
     grid-template-columns: repeat(8, 4.5vw);
     grid-template-rows: repeat(12, 4vw);
-    margin-top: 1%;
 }
 
 .cella{
@@ -92,4 +103,34 @@ input::-webkit-inner-spin-button {
 .Kivalasztott{
     background-color: rgba(199, 49, 56, 0.705);
     box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 10px 5px rgb(0, 0, 0) inset;
+}
+.ExtraGombok{
+
+    /*ez kell még*/
+    /*hover is*/
+
+    background-color: rgba(150, 146, 146, 0.671);
+    transition: all .1s ease-in-out !important;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: inherit;
+    width: 15rem;
+    height: 3rem;
+    margin: 1%;
+}
+
+.GombElerheto{
+
+    /*ez is kell sztem magától értetődő*/
+    /*hover is*/
+
+    background-color: green;
+}
+.GombNemElerheto{
+
+    /*ez is kell sztem magától értetődő*/
+    /*hover is*/
+
+    background-color: red;
 }

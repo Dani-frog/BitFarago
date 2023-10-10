@@ -1,4 +1,5 @@
 const jatekTer = document.getElementById("jatekTer");
+var gombokDiv = document.getElementById("gombokDiv");
 var korokSzama = 0;
 var Mezok = [["b","l","f","q","k","f","l","b"],
             ["p","p","p","p","p","p","p","p"],
@@ -16,7 +17,12 @@ var kiJelolt;
 var feherLep = true;
 var feherParasztLe = true;
 var FeketeParasztFel = true;
-var duplaLepes = false;
+var duplaLepesAktiv = false;
+var feherDuplaElhasznalt = false;
+var feketeDuplaElhasznalt = false;
+var jokerAktiv = false;
+var feherJokerElhasznalt = false;
+var feketeJokerElhasznalt = false;
 
 
 function Main(){
@@ -82,6 +88,87 @@ function TablaGen() {
             document.getElementById("tabla").appendChild(cella);
         }
     } 
+    SzuperGombok();
+}
+
+function SzuperGombok(){
+    gombokDiv.innerHTML = "";
+    DuplalepGomb();
+    JokerLep();
+}
+
+function JokerLep(){
+    let gomb = document.createElement("button");
+    gomb.textContent = "Joker lépés";
+    gomb.classList.add("ExtraGombok");
+    if(feherLep){
+        if(!feherJokerElhasznalt){
+            gomb.setAttribute("onclick","JokerGombraKatt()");
+            gomb.classList.add("GombElerheto");
+        }else{
+            gomb.removeAttribute("onclick");
+            gomb.classList.add("GombNemElerheto");
+        }
+    }else{
+        if(!feketeJokerElhasznalt){
+            gomb.setAttribute("onclick","JokerGombraKatt()");
+            gomb.classList.add("GombElerheto");
+        }else{
+            gomb.removeAttribute("onclick");
+            gomb.classList.add("GombNemElerheto");
+        }
+    }
+    gombokDiv.appendChild(gomb);
+}
+
+function JokerGombraKatt(){
+    jokerAktiv = true
+    if(feherLep){
+        if(!feherJokerElhasznalt){
+            feherJokerElhasznalt = true;
+        }
+    }else{
+        if(!feketeJokerElhasznalt){
+            feketeJokerElhasznalt = true;
+        }
+    }
+}
+
+function DuplalepGomb(){
+    let gomb = document.createElement("button");
+    gomb.textContent = "Dupla lépés";
+    gomb.classList.add("ExtraGombok");
+    if(feherLep){
+        if(!feherDuplaElhasznalt){
+            gomb.setAttribute("onclick","DuplaGombraKatt()");
+            gomb.classList.add("GombElerheto");
+        }else{
+            gomb.removeAttribute("onclick");
+            gomb.classList.add("GombNemElerheto");
+        }
+    }else{
+        if(!feketeDuplaElhasznalt){
+            gomb.setAttribute("onclick","DuplaGombraKatt()");
+            gomb.classList.add("GombElerheto");
+        }else{
+            gomb.removeAttribute("onclick");
+            gomb.classList.add("GombNemElerheto");
+        }
+    }
+    gombokDiv.appendChild(gomb);
+}
+
+function DuplaGombraKatt(){
+    duplaLepesAktiv = true;
+    if(feherLep){
+        if(!feherDuplaElhasznalt){
+            feherDuplaElhasznalt = true;
+        }
+    }else{
+        if(!feketeDuplaElhasznalt){
+            feketeDuplaElhasznalt = true;
+        }
+    }
 }
 
 function Kattint(div){
@@ -113,11 +200,14 @@ function Kattint(div){
 }
 
 function Lepes(div){
-    if(!duplaLepes){
+    if(!duplaLepesAktiv){
         feherLep = !feherLep;
     }
     else{
-        duplaLepes = !duplaLepes;
+        duplaLepesAktiv = !duplaLepesAktiv;
+    }
+    if(jokerAktiv){
+        jokerAktiv = !jokerAktiv;
     }
     if(kiJelolt.dataset.Le != undefined){
         div.dataset.Le = kiJelolt.dataset.Le;
@@ -130,7 +220,8 @@ function Lepes(div){
     Mezok[kiJelolt.dataset.sor][kiJelolt.dataset.oszlop] = " ";
     Mezok[div.dataset.sor][div.dataset.oszlop] = Mtemp;
     ClassTorles();
-    
+    SzuperGombok();
+    korokSzama--;
 }
 
 function ClassTorles(){
@@ -142,23 +233,27 @@ function ClassTorles(){
 }
 
 function LehetsegesLepesek(div){
-    if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "p"){
-        ParasztLepes(div);
-    }
-    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "b"){
-        BastyaLepes(div);
-    }
-    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "l"){
-        LoLepes(div);
-    }
-    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "f"){
-        FutoLepes(div);
-    }
-    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "k"){
-        KiralyLepes(div);
-    }
-    else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "q"){
-        KiralynoLepes(div);
+    if(jokerAktiv){
+        JokerLepes(div);
+    }else{
+        if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "p"){
+            ParasztLepes(div);
+        }
+        else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "b"){
+            BastyaLepes(div);
+        }
+        else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "l"){
+            LoLepes(div);
+        }
+        else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "f"){
+            FutoLepes(div);
+        }
+        else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "k"){
+            KiralyLepes(div);
+        }
+        else if(Mezok[div.dataset.sor][div.dataset.oszlop].toLowerCase() == "q"){
+            KiralynoLepes(div);
+        }
     }
 }
 
@@ -169,6 +264,13 @@ function JoDivMegtalal(sor,oszlop){
             return t[i];
         }
     }
+}
+
+function JokerLepes(div){
+    KiralyLepes(div);
+    const sor = parseInt(div.dataset.sor);
+    const oszlop = parseInt(div.dataset.oszlop);
+    LoLepesek(sor,oszlop);
 }
 
 function ParasztLepes(div){
@@ -316,6 +418,9 @@ function LoLepes(div){
     div.classList.add("Kivalasztott");
     const sor = parseInt(div.dataset.sor);
     const oszlop = parseInt(div.dataset.oszlop);
+    LoLepesek(sor,oszlop);
+}
+function LoLepesek(sor,oszlop){
     const lepesek = [[-2, -1], [-2, 1], [-1, -2], [-1, 2],[1, -2], [1, 2], [2, -1], [2, 1]];
     for(let i = 0;i<lepesek.length;i++) {
         let lehx = sor + lepesek[i][0];
@@ -337,9 +442,8 @@ function LoLepes(div){
             }
         }
     }
-
-
 }
+
 function FutoLepes(div){
     div.classList.add("Kivalasztott");
     const sor = parseInt(div.dataset.sor);
