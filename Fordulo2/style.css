@@ -1,3 +1,60 @@
+body{
+    background: radial-gradient(ellipse at top,  rgba(255, 255, 255), transparent),
+               radial-gradient(ellipse at bottom, rgba(0, 0, 0), transparent);
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+}
+
+#fo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#gombokDiv{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow: visible;
+}
+
+#korbeDiv{
+    text-align: center;
+}
+#korbeDiv input{
+    box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 12px 6px rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 3vw;
+    font-weight: bold;
+    width: 25%;
+    height: 35%;
+    margin: 1%;
+}
+#korbeDiv button{
+    background-color: rgba(150, 146, 146, 0.671);
+    transition: all .1s ease-in-out !important;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: inherit;
+    width: 15rem;
+    height: 3rem;
+    margin: 1%;
+}
+#korbeDiv button:hover{
+    border-radius: 20px;
+    color:  white;
+    border: none;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+    box-shadow: 0 0 10px 0 rgb(245, 245, 245) inset, 0 0 2px 2px rgb(255, 255, 255);
+    background-color: rgba(27, 26, 26, 0.438);
+    border: solid white 2px;
+}
+
 #tabla {
     justify-content: center;
     display: grid;
@@ -15,11 +72,67 @@
     font-size: 30px;
 }
 
+.cella:hover{
+    background-color: rgba(49, 199, 49, 0.705);
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 10px 5px rgb(0, 0, 0) inset;
+}
+
 .fekete {
-    background-color: rgba(22, 22, 22, 0.699);
+    background-color: rgba(22, 22, 22, 0.7);
     color: white;
 }
 
 .feher {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.kep{
+    width: 100%;
+    height: auto;
+}
+
+.lephet{
+    background-color: rgba(34, 173, 34, 0.5);
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 4px 1px rgb(0, 0, 0) inset;
+}
+
+.Kivalasztott{
+    background-color: rgba(199, 49, 56, 0.705);
+    box-shadow: 0 0 1px 0 rgb(0, 0, 0) , 0 0 10px 5px rgb(0, 0, 0) inset;
+}
+.ExtraGombok{
+
+    /*ez kell még*/
+    /*hover is*/
+
+    background-color: rgba(150, 146, 146, 0.671);
+    transition: all .1s ease-in-out !important;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    font-size: inherit;
+    width: 15rem;
+    height: 3rem;
+    margin: 1%;
+}
+
+.GombElerheto{
+
+    /*ez is kell sztem magától értetődő*/
+    /*hover is*/
+
+    background-color: green;
+}
+.GombNemElerheto{
+
+    /*ez is kell sztem magától értetődő*/
+    /*hover is*/
+
+    background-color: red;
 }
