@@ -11,13 +11,19 @@ var jatekTer = [["b","l","f","q","k","f","l","b"],
                 ["P","P","P","P","P","P","P","P"],
                 ["B","L","F","K","Q","F","L","B"]];
 
+var jokerlepes1,jokerlepes2,duplalepes1,duplalepes2=true;//joker egy figura egy másik kiválasztott figura lépésével léphet. duplalepes meg egy jatekos kettőször lép.
+//Gyalog 1, Futó 2, Huszár 2, Király 2, Bástya 3, Vezér 5 pontok 
+
 function Main(){
     TablaGen();
 }
 
 Main();
 
-
+function Korvege() {
+    //Jatekvege1: minden kör elején megnézi a fekete meg feher babuk darabszámát és ha egyiknek száma kevesebb mint egy akkor az vesztett(másik nyer). 
+    //Jatekvege2: Ha a megadott körszámok számát eléri a játék a leütött bábúk pontjai alapján legyen nyertes(megnézni mien bábúk nincsenek és azok pont összege szerint).
+}
 
 function TablaGen() {
     let feher = false;
