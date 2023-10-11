@@ -105,7 +105,7 @@ body{
     display: flex;
     color: rgba(66, 64, 64, 0.678);
     position: absolute;
-    margin-top: 10vh;
+    margin-top: 10%;
 }
 
 #vege:hover {
