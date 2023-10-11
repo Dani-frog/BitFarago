@@ -38,7 +38,7 @@ var korbeDiv;
 function Main(){
     if(document.getElementById("korbeInp").value != '' &&  Math.abs(parseInt(document.getElementById("korbeInp").value))>0){
         korokSzama = Math.abs(parseInt(document.getElementById("korbeInp").value));
-        document.getElementById("fo").removeChild(korbeDiv)
+        document.getElementById("GombokNak").removeChild(korbeDiv)
         TablaGen();
     }else{
         document.getElementById("korbeInp").placeholder = "Adj meg számot!";
@@ -61,7 +61,7 @@ function KorValaszto(){
     korbeDiv.appendChild(korbeKero);
     korbeDiv.innerHTML += "</br>";
     korbeDiv.appendChild(gomb);
-    document.getElementById("fo").appendChild(korbeDiv);
+    document.getElementById("GombokNak").appendChild(korbeDiv);
     
 }
 
