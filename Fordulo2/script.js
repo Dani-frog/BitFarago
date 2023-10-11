@@ -3,20 +3,20 @@ var gombokDiv = document.getElementById("gombokDiv");
 var pontokDiv = document.getElementById("pontokDiv");
 var korDiv = document.getElementById("korDiv");
 
-var Mezok = [[" "," "," "," "," "," "," "," "],
-            [" ","q"," "," "," "," "," "," "],
-            [" "," "," "," ","p"," "," "," "],
-            [" "," "," ","P"," "," "," "," "],
+var Mezok = [["b","l","f","k","q","f","l","b"],
+            ["p","p","p","p","p","p","p","p"],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
-            [" ","Q"," "," "," "," "," "," "],
-            [" "," "," "," "," "," "," "," "]];
+            [" "," "," "," "," "," "," "," "],
+            [" "," "," "," "," "," "," "," "],
+            ["P","P","P","P","P","P","P","P"],
+            ["B","L","F","K","Q","F","L","B"]];
 
-            /*["b","l","f","q","k","f","l","b"],
+            /*["b","l","f","k","q","f","l","b"],
             ["p","p","p","p","p","p","p","p"]
             ["P","P","P","P","P","P","P","P"],
             ["B","L","F","K","Q","F","L","B"]*/ 
@@ -38,7 +38,7 @@ var korbeDiv;
 function Main(){
     if(document.getElementById("korbeInp").value != '' &&  Math.abs(parseInt(document.getElementById("korbeInp").value))>0){
         korokSzama = Math.abs(parseInt(document.getElementById("korbeInp").value));
-        document.getElementById("fo").removeChild(korbeDiv)
+        document.getElementById("GombokNak").removeChild(korbeDiv)
         TablaGen();
     }else{
         document.getElementById("korbeInp").placeholder = "Adj meg számot!";
@@ -61,7 +61,7 @@ function KorValaszto(){
     korbeDiv.appendChild(korbeKero);
     korbeDiv.innerHTML += "</br>";
     korbeDiv.appendChild(gomb);
-    document.getElementById("fo").appendChild(korbeDiv);
+    document.getElementById("GombokNak").appendChild(korbeDiv);
     
 }
 
