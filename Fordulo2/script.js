@@ -31,9 +31,6 @@ var jokerAktiv = false;
 var feherJokerElhasznalt = false;
 var feketeJokerElhasznalt = false;
 
-
-var jokerlepes1,jokerlepes2,duplalepes1,duplalepes2=true;//joker egy figura egy másik kiválasztott figura lépésével léphet. duplalepes meg egy jatekos kettőször lép.
-//Gyalog 1, Futó 2, Huszár 2, Király 2, Bástya 3, Vezér 5 pontok 
 var korbeDiv;
 function Main(){
     if(document.getElementById("korbeInp").value != '' &&  Math.abs(parseInt(document.getElementById("korbeInp").value))>0){
