@@ -1,9 +1,12 @@
 const jatekTer = document.getElementById("jatekTer");
 var gombokDiv = document.getElementById("gombokDiv");
+var pontokDiv = document.getElementById("pontokDiv");
+var korDiv = document.getElementById("korDiv");
+
 var Mezok = [[" "," "," "," "," "," "," "," "],
             [" ","q"," "," "," "," "," "," "],
-            [" "," "," "," "," "," "," "," "],
-            [" "," "," "," "," "," "," "," "],
+            [" "," "," "," ","p"," "," "," "],
+            [" "," "," ","P"," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
             [" "," "," "," "," "," "," "," "],
@@ -35,7 +38,7 @@ var korbeDiv;
 function Main(){
     if(document.getElementById("korbeInp").value != '' &&  Math.abs(parseInt(document.getElementById("korbeInp").value))>0){
         korokSzama = Math.abs(parseInt(document.getElementById("korbeInp").value));
-        document.getElementById("GombokNak").removeChild(korbeDiv)
+        document.getElementById("fo").removeChild(korbeDiv)
         TablaGen();
     }else{
         document.getElementById("korbeInp").placeholder = "Adj meg számot!";
@@ -58,7 +61,7 @@ function KorValaszto(){
     korbeDiv.appendChild(korbeKero);
     korbeDiv.innerHTML += "</br>";
     korbeDiv.appendChild(gomb);
-    document.getElementById("GombokNak").appendChild(korbeDiv);
+    document.getElementById("fo").appendChild(korbeDiv);
     
 }
 
@@ -106,7 +109,10 @@ function TablaGen() {
             document.getElementById("tabla").appendChild(cella);
         }
     } 
+    korkiiras();
     SzuperGombok();
+    pontszamolas();
+    
 }
 
 function SzuperGombok(){
@@ -114,7 +120,23 @@ function SzuperGombok(){
     DuplalepGomb();
     JokerLep();
 }
-
+function korkiiras(){
+    korDiv.innerHTML="";
+    let korfelirat = document.createElement("h1");
+    korfelirat.textContent = "Hátralévő körök száma: "+korokSzama;
+    korDiv.appendChild(korfelirat);
+}
+function pontszamolas(){
+    pontokDiv.innerHTML="";
+    let egyikpont = document.createElement("h2");
+    egyikpont.id = "feherpont";
+    egyikpont.textContent = "Feher pontjai: " + feherPont;
+    let masikpont = document.createElement("h2");
+    masikpont.id = "feketepont";
+    masikpont.textContent = "Fekete pontjai: " + feketePont;
+    pontokDiv.appendChild(egyikpont);
+    pontokDiv.appendChild(masikpont);
+}
 function JokerLep(){
     let gomb = document.createElement("button");
     gomb.id = "JokerGomb;"
@@ -229,6 +251,7 @@ function Leut(div){
     }else if(!feherLep && div.dataset.ertek != undefined){
         feketePont+=parseInt(div.dataset.ertek);
     }
+    pontszamolas();
 }
 function Lepes(div){
 
@@ -259,6 +282,7 @@ function Lepes(div){
     SzuperGombok();
     if(feherLep){
         korokSzama--;
+        korkiiras();
     }
     JatekVege();
 }
