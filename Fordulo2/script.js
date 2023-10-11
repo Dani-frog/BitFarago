@@ -293,14 +293,67 @@ function JatekVege() {
     }
 }
 
+function GombBerakas(vege) {
+    const pontok = document.createElement('div');
+    pontok.id="pontok";
+    pontok.style.display="none";
+    pontok.innerHTML="Fehér pontjai: "+feherPont+"\nFekete pontjai: "+feketePont;
+    vege.onclick=function() {
+        if (pontok.style.display==="none") {
+            pontok.style.display = "flex";
+        } else {
+          pontok.style.display = "none";
+        }
+        document.getElementById("vege").appendChild(pontok);
+    }
+    const ujragomb=document.createElement('button');
+    ujragomb.id="ujragomb";
+    ujragomb.textContent="Új Játék!";
+    ujragomb.onclick=function() {window.location.reload()};
+    document.getElementById("fo").appendChild(vege);
+    document.getElementById("fo").appendChild(ujragomb);
+
+}
+
+function VegeKiirasA() {
+    const vege = document.createElement('div');
+    vege.id="vege";
+    vege.innerHTML="Fehér Nyert!"
+    GombBerakas(vege);
+}
+function VegeKiirasB() {
+    const vege = document.createElement('div');
+    vege.id="vege";
+    vege.innerHTML="Fekete Nyert!"
+    GombBerakas(vege);
+}
+function VegeKiirasC() {
+    const vege = document.createElement('div');
+    vege.id="vege";
+    vege.innerHTML="Döntetlen!"
+    GombBerakas(vege);
+}
+
 function Kinyert()
 {
-    alert("anyá22");
+    alert("Vége a játéknak!");
     document.getElementById("fo").innerHTML="";
-    if (feherPont>feketePont) {
-        document.getElementById("fo").innerHTML+="Fehér nyeert";
+    if (Nincskicsi()) {
+        VegeKiirasB();
     }
-    else {document.getElementById("fo").innerHTML+="Fekter nyeert";}
+    else if (Nincsnagy()) {
+        VegeKiirasA();
+    }
+    else if (feherPont>feketePont) {
+        VegeKiirasA();
+    }
+    else if(feherPont<feketePont){
+        VegeKiirasB();
+    }
+    else if(feherPont==feketePont){
+        VegeKiirasC();    
+    }
+    
 }
 
 function Nincskicsi() {
